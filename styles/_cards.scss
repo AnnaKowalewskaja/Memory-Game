@@ -4,8 +4,9 @@
     flex-wrap: wrap;
     width: 104rem;
     max-width: 90%;
-  height: 80rem;
-  margin: auto;
+    height: 80rem;
+    margin: auto;
+    perspective: 1000px;
 }
 
 .back-face,
@@ -14,12 +15,27 @@
     width: 20rem;
     height: 20rem;
     border-radius: 1rem;
-    
+    transform-style: preserve-3d;
+
+    transition: all 0.1s ease-in;
+    &:active {
+        transform: scale(0.98);
+        transition: all 0.1s ease-in;
+    }
 }
 
-.memory__card{
+
+.memory__card {
     position: relative;
     width: calc(25% - 1rem);
-  height: calc(33% - 1rem);
+    height: calc(33% - 1rem);
+    transform: scale(1);
+    transform-style: preserve-3d;
+     transition: transform .5s;
 
 }
+
+.flip__card{
+    transform: rotateY(180deg);
+}
+

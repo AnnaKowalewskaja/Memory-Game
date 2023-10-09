@@ -1,0 +1,25 @@
+.memory__game {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 104rem;
+    max-width: 90%;
+  height: 80rem;
+  margin: auto;
+}
+
+.back-face,
+.front-face {
+    position: absolute;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 1rem;
+    
+}
+
+.memory__card{
+    position: relative;
+    width: calc(25% - 1rem);
+  height: calc(33% - 1rem);
+
+}

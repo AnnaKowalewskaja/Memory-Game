@@ -6,23 +6,7 @@
   width: 104rem;
   max-width: 90%;
   height: 80rem;
-  margin: auto;
-  perspective: 1000px;
-}
-
-.back-face,
-.front-face {
-  position: absolute;
-  width: 20rem;
-  height: 20rem;
-  border-radius: 1rem;
-  transform-style: preserve-3d;
-  transition: all 0.1s ease-in;
-}
-.back-face:active,
-.front-face:active {
-  transform: scale(0.98);
-  transition: all 0.1s ease-in;
+  perspective: 1200px;
 }
 
 .memory__card {
@@ -32,6 +16,34 @@
   transform: scale(1);
   transform-style: preserve-3d;
   transition: transform 0.5s;
+  display: flex;
+  justify-content: center;
+}
+
+.memory__card:active {
+  transform: scale(0.97);
+  transition: all 0.4s ease-in;
+}
+
+.back-face,
+.front-face {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  border-radius: 1rem;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transition: all 0.1s ease-in;
+}
+.back-face:active,
+.front-face:active {
+  transform: scale(0.98);
+  transition: all 0.1s ease-in;
+}
+
+.front-face {
+  transform: rotateY(180deg);
 }
 
 .flip__card {

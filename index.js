@@ -1,15 +1,11 @@
-const memoryCards = document.querySelectorAll('.memory__card');
+const MEMORY_CARDS = document.querySelectorAll('.memory__card');
+const INFORMATION_STEPS = document.getElementById('information__steps');
 
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
 let steps = 0;
-memoryCards.forEach(card => card.addEventListener('click', flipCard));
-
-
-
-
-
+MEMORY_CARDS.forEach(card => card.addEventListener('click', flipCard));
 
 
 
@@ -32,11 +28,19 @@ function flipCard() {
 }
 
 
+function addInformationSteps() {
+    steps++;
+    INFORMATION_STEPS.textContent = `Steps: ${steps}`;
+    localStorage.setItem('test', steps);
+  
+}
+
+console.log(localStorage);
+
+
 function checkForMatchCard() {
     let isMatch = firstCard.dataset.cardname === secondCard.dataset.cardname;
-    steps++;
-console.log(steps);
-    console.log(firstCard.dataset.cardname, secondCard.dataset.cardname);
+    addInformationSteps();
     isMatch ? disableCards() : unflipCards();
 }
 
@@ -63,7 +67,7 @@ function resetBoard() {
 }
 
 (function shuffleCards() {
-    memoryCards.forEach(card => {
+    MEMORY_CARDS.forEach(card => {
         let randomPosition = Math.floor(Math.random() * 12);
         card.style.order = randomPosition;
     })

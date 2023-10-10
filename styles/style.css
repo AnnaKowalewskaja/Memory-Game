@@ -147,4 +147,15 @@ p {
   margin-top: 3rem;
   margin-bottom: 3rem;
   max-width: 80%;
+}
+
+.information {
+  height: 3rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.information__steps {
+  font-size: 2.5rem;
+  transition: all 0.3s ease-in;
 }/*# sourceMappingURL=style.css.map */
